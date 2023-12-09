@@ -12,17 +12,12 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/feed',
+      path: '/',
       name: 'home',
       component: HomeView
     },
-    // {
-    //   path: '/',
-    //   name: 'home',
-    //   component: HomeView
-    // },
     {
-      path: '/',
+      path: '/feed',
       name: 'feed',
       component: FeedView
     },
