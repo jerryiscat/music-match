@@ -4,9 +4,8 @@ export async function redirectToAuthCodeFlow(clientId) {
 
     const verifier = generateCodeVerifier(128);
     const challenge = await generateCodeChallenge(verifier);
-    const front_web = "http://localhost:5173/feed";
-    // const frontend = import.meta.env.VITE_FRONTEND_URL;
-    // const front_web =`${frontend}/feed`
+    const frontend = import.meta.env.VITE_FRONTEND_URL;
+    const front_web =`${frontend}/feed`
     params.append("redirect_uri", front_web);
 
     localStorage.setItem("verifier", verifier);
@@ -22,9 +21,8 @@ export async function redirectToAuthCodeFlow(clientId) {
 
 export async function getAccessToken(clientId, code) {
     const params = new URLSearchParams();
-    const front_web= "http://localhost:5173/feed";
-    // const frontend = import.meta.env.VITE_FRONTEND_URL;
-    // const front_web =`${frontend}/feed`
+    const frontend = import.meta.env.VITE_FRONTEND_URL;
+    const front_web =`${frontend}/feed`
     params.append("redirect_uri", front_web);
 
     const verifier = localStorage.getItem("verifier");

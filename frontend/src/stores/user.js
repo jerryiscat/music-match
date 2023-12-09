@@ -33,11 +33,13 @@ export const useUserStore = defineStore({
                 this.user.age = localStorage.getItem('user.age');
                 this.user.email = localStorage.getItem('user.email');
                 this.user.avatar = localStorage.getItem('user.avatar');
-                const user_genres = localStorage.getItem('user.genres');
-                this.user.genres = JSON.parse(user_genres);
+                // const user_genres = localStorage.getItem('user.genres');
+                // this.user.genres = JSON.parse(user_genres);
+                this.user.genres = localStorage.getItem('user.genres');
                 this.user.isAuthenticated = true
-                const songs = localStorage.getItem('songs');
-                this.user.songs = JSON.parse(songs);
+                // const songs = localStorage.getItem('songs');
+                // this.user.songs = JSON.parse(songs);
+                this.user.songs = localStorage.getItem('user.songs');
                 this.refreshToken()
 
                 console.log('Initialized user:', this.user)
@@ -120,9 +122,9 @@ export const useUserStore = defineStore({
             const user_email = localStorage.getItem('user.email', this.user.email)
             const user_avatar = localStorage.getItem('user.avatar', this.user.avatar)
             const user_genres = localStorage.getItem('user.genres', this.user.genres)
-            const genres = JSON.parse(user_genres);
-            const songs = localStorage.getItem('songs', this.user.songs)
-            const user_songs = JSON.parse(songs);
+            // const genres = JSON.parse(user_genres);
+            const user_songs = localStorage.getItem('songs', this.user.songs)
+            // const user_songs = JSON.parse(songs);
             const auth = localStorage.getItem('user.isAuthenticated', this.user.isAuthenticated)
             this.user.id = user_id
             this.user.name = user_name
@@ -130,7 +132,7 @@ export const useUserStore = defineStore({
             this.user.age = user_age
             this.user.email = user_email
             this.user.avatar = user_avatar
-            this.user.genres = genres
+            this.user.genres = user_genres 
             this.user.songs = user_songs
             this.user.isAuthenticated = auth
         },

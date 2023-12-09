@@ -1,7 +1,6 @@
-const graphqlEndpoint1 = "http://localhost:1000/graphql";
-// const graphqlEndpoint2 = "https://music-match-back-end.onrender.com/graphql";
+const graphqlEndpoint = import.meta.env.VITE_SERVER_URL + "/graphql";
 export const makeGraphQLPostRequest = async (mutation, variables) => {
-    const response = await fetch(graphqlEndpoint1, {
+    const response = await fetch(graphqlEndpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
