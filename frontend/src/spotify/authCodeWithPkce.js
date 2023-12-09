@@ -1,14 +1,12 @@
-const backend = import.meta.env.VITE_SERVER_URL;
 
 export async function redirectToAuthCodeFlow(clientId) {
     const params = new URLSearchParams();
 
     const verifier = generateCodeVerifier(128);
     const challenge = await generateCodeChallenge(verifier);
-    // const front_local = "http://localhost:5173/feed";
-    // params.append("redirect_uri", front_local);
-
-    const front_web ="https://final-project-music-match.azurewebsites.net/feed"
+    const front_web = "http://localhost:5173/feed";
+    // const frontend = import.meta.env.VITE_FRONTEND_URL;
+    // const front_web =`${frontend}/feed`
     params.append("redirect_uri", front_web);
 
     localStorage.setItem("verifier", verifier);
@@ -24,10 +22,9 @@ export async function redirectToAuthCodeFlow(clientId) {
 
 export async function getAccessToken(clientId, code) {
     const params = new URLSearchParams();
-    // const front_local = "http://localhost:5173/feed";
-    // params.append("redirect_uri", front_local);
-
-    const front_web ="https://final-project-music-match.azurewebsites.net/feed"
+    const front_web= "http://localhost:5173/feed";
+    // const frontend = import.meta.env.VITE_FRONTEND_URL;
+    // const front_web =`${frontend}/feed`
     params.append("redirect_uri", front_web);
 
     const verifier = localStorage.getItem("verifier");

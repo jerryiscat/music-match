@@ -5,7 +5,7 @@ const server = require('http').createServer();
 
 require('dotenv').config();
 
-var url = process.env.VITE_FRONTEND_URL;
+var url = process.env.VITE_SERVER_URL;
 
 const io = require('socket.io')(server, {
     cors: {
