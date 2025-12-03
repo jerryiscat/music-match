@@ -1,1 +1,11 @@
 node_modules
+
+# Environment files (do NOT commit secrets)
+.env
+.env.*
+.env.local
+.env.*.local
+.envrc
+*.pem
+*.key
+.DS_Store
