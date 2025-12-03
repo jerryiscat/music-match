@@ -34,41 +34,11 @@ The Backend API handles user authentication (via Spotify), data fetching from ex
 
 ## 🚀 Get Started Locally
 
-### 🔑 Environment Variables
+**Environment Variables**
 
 Before running, copy the top-level `.env.example` to `.env` (or create a `.env` in the backend folder) and populate the secrets. Do NOT commit your `.env` file to the repository.
 
-Example variables used in this project (refer to `.env.example`):
-
-| Variable | Description |
-| :--- | :--- |
-| `VITE_SERVER_URL` | URL the frontend uses to reach the backend (e.g., http://localhost:1000) |
-| `OPENAI_API_KEY` | Your OpenAI API key for the AI-generation features |
-| `PORT` | The port the server listens on (default 1000) |
-| `DATABASE`, `DATABASE_USER`, `PASSWORD`, `HOST` | PostgreSQL connection details |
-| `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET` | Spotify OAuth app credentials |
-
-Helpful notes:
-
-- Keep secrets out of source control. This repo now ignores `.env` and common env/key files via `.gitignore`.
-- To create a safe local env file:
-
-```bash
-# Make a local copy (do not commit this file)
-cp .env.example .env
-# Edit .env and fill values (e.g. OPENAI_API_KEY)
-```
-
-- If you accidentally committed an env file, remove it from the repository history on the current branch with:
-
-```bash
-# remove from git index while keeping it locally
-git rm --cached .env
-git commit -m "remove .env from repository"
-```
-
-
-### 🛠️ Installation and Run
+**Installation and Run**
 
 Clone the repository and run the setup commands for both the frontend and backend:
 
