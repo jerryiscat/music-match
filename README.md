@@ -26,6 +26,8 @@ The Backend API handles user authentication (via Spotify), data fetching from ex
 - Express.js: The fast, unopinionated, minimal web framework used for building the REST API.
 - Spotify API: Core data source for fetching listening habits.
 - OpenAI API: Used for text generalization and music personality derivation.
+- GraphQL: A GraphQL layer is available (see `graphql/graphql.js`) and is used alongside REST routes to expose data to the frontend where appropriate.
+- Sockets / real-time: A socket-based real-time layer is used for chat/presence (see `server/routes/socket.js` and `frontend/socket/socket.js`).
 
 **Database**
 - PostgreSQL: Relational database for storing user profiles, matches, and generated personalities.
